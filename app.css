@@ -1,0 +1,265 @@
+@font-face {
+    font-family: 'Caveat';
+    src: url('fuentes/Caveat/static/Caveat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel_Decorative';
+    src: url('fuentes/Cinzel_Decorative/CinzelDecorative-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('fuentes/Cinzel/static/Cinzel-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+span {
+    font-family: 'Cinzel';
+}
+
+#ImagenInicial:hover {
+    cursor: pointer;
+}
+
+.ColorBase {
+    color: rgb(58, 37, 9)
+}
+
+
+/* Texto */
+.text-color-terracota-claro {
+    color: #E07B5F;
+}
+
+.text-color-terracota-medio {
+    color: #D46848;
+}
+
+.text-color-terracota-oscuro {
+    color: #8E3B2E;
+    /* más profundo */
+}
+
+/* Fondo */
+.bg-terracota-claro-bajo {
+    background-color: #f7e0d3a6;
+}
+
+.bg-terracota-claro {
+    background-color: #E07B5F;
+}
+
+.bg-terracota-medio {
+    background-color: #D46848;
+}
+
+.bg-terracota-oscuro {
+    background-color: #8E3B2E;
+}
+
+/* Borde */
+.border-terracota-claro {
+    border: 1px solid #E07B5F;
+}
+
+.border-terracota-medio {
+    border: 1px solid #D46848;
+}
+
+.border-terracota-oscuro {
+    border: 1px solid #8E3B2E;
+}
+
+
+
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.padre {
+    height: 100%;
+}
+
+/* Solo cuando está activo se aplica flex */
+.padre.active {
+    display: flex;
+    flex-direction: column;
+}
+
+#ImagenInicial {
+    display: flex;
+    /* lo conviertes en contenedor flex */
+    justify-content: center;
+    /* centra horizontalmente */
+    align-items: center;
+    /* centra verticalmente */
+    margin-top: 35px;
+}
+
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    /* ocupa todo el ancho disponible */
+    height: 850px;
+    /* alto fijo (ajústalo a lo que necesites) */
+    background-image: url("foto_camila_miguel.jpg");
+    background-size: cover;
+    /* recorta la imagen si el ancho no alcanza */
+    background-position: center;
+    /* centrada */
+    overflow: hidden;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    /* gradiente solo en parte superior */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+}
+
+.hero-text {
+    position: absolute;
+    top: 20px;
+    /* separado un poco del borde */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #8E3B2E;
+    font-family: 'Cinzel', serif;
+}
+
+.hero-text h1 {
+    font-size: 35px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 22px;
+    margin: 5px 0 0;
+}
+
+
+.espacio {
+    height: 600px;
+    /* simula contenido antes del contador */
+}
+
+#countdown {
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+
+}
+
+#countdown-container {
+    padding: 10px 0;
+    border-top: 1.5px solid #8E3B2E;
+    border-bottom: 1.5px solid #8E3B2E;
+    color: #8E3B2E;
+}
+
+#countdown.visible {
+    animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.time-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-box span:first-child {
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.time-box .label {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+
+.calendar {
+    border-collapse: collapse;
+    margin: 10px auto 20px;
+    font-family: 'Cinzel';
+    font-size: 16px;
+    text-align: center;
+    color: #8E3B2E;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+    display: block;
+    width: 350px;
+}
+
+
+.calendar th,
+.calendar td {
+    width: 50px;
+    height: 30px;
+    position: relative;
+}
+
+.calendar thead {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    font-size: 13px;
+}
+
+
+.calendar td {
+    vertical-align: middle;
+}
+
+.calendar .special {
+    font-weight: bold;
+    color: #8E3B2E;
+}
+
+.calendar .special::before {
+    content: "❤️";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    opacity: 0.2;
+    /* difuminado para quedar detrás */
+    z-index: -1;
+}
