@@ -42,7 +42,9 @@
                 <div class="border-terracota-oscuro" style="padding:3px;width:70%;margin:25px auto 0">
                     <div class="border-terracota-oscuro" style="padding:5px;">
                         <span style="display:block;text-align:center;font-size:20px;">Invitación para:</span>
-                        <span style="display:block;text-align:center;font-size:20px;">Juan Perez</span>
+                        <span style="display:block;text-align:center;font-size:20px;" Id="txtInvitado">
+                            <img src="loading.gif" style="width: 50px;">
+                        </span>
                     </div>
                 </div>
             </div>
@@ -215,8 +217,8 @@
                             <img src="Torta.png" style="width: 70px" class="mb-2 mx-auto d-block">
                             <span class="d-block text-center font-size-17 mb-4 Parisienne">
                                 Queremos que nuestra felicidad se multiplique<br>
-                                 al reír, bailar y compartirla<br>
-                                 con quienes amamos… contigo.
+                                al reír, bailar y compartirla<br>
+                                con quienes amamos… contigo.
                             </span>
                             <span class="d-block text-center font-size-13 mb-2">
                                 5:00 pm
@@ -259,7 +261,57 @@
 
 
     </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+        import { getFirestore, collection, doc, getDoc,setDoc  } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC6Di7CyehlsNI08PGpBHU75VJhVMWxEJs",
+            authDomain: "invitadosboda-e1314.firebaseapp.com",
+            projectId: "invitadosboda-e1314",
+            storageBucket: "invitadosboda-e1314.firebasestorage.app",
+            messagingSenderId: "159250168397",
+            appId: "1:159250168397:web:aa693cd4472ba0bf2f3a04",
+            measurementId: "G-6Y772NVW4S"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Leer ID de la URL
+        const params = new URLSearchParams(window.location.search);
+        const Id = params.get("Id"); // ejemplo: ?Id=abc123
+
+        async function cargarInvitado() {
+            if (!Id) {
+                console.log("⚠️ No se encontró 'Id' en la URL");
+                return;
+            }
+
+            // Buscar documento con ese Id
+            const docRef = doc(db, "Invitados", Id);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+
+                var elemento = document.getElementById("txtInvitado");
+                elemento.textContent = docSnap.data().Nombre;
+
+
+            } else {
+                console.log("❌ No existe un documento con Id:", Id);
+            }
+        }
+
+        cargarInvitado();
+
+    </script>
 
 
 </body>
