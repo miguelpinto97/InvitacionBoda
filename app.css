@@ -123,7 +123,7 @@ body {
     /* ocupa todo el ancho disponible */
     height: 850px;
     /* alto fijo (ajústalo a lo que necesites) */
-    background-image: url("FotoCentral.jpg");
+    background-image: url("Foto_Central.png");
     background-size: cover;
     /* recorta la imagen si el ancho no alcanza */
     background-position: center;
@@ -225,7 +225,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .time-box {
@@ -235,13 +235,13 @@ body {
 }
 
 .time-box span:first-child {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 40px;
+    line-height: 40px;
 }
 
 .time-box .label {
-    font-size: 16px;
-    margin-top: 5px;
+    font-size: 14px;
+    margin-top: 3px;
 }
 
 
@@ -338,7 +338,11 @@ body {
     background: rgb(255 211 154 / 14%)
         /* 0.5 = 50% transparencia */
 }
-
+.font-size-40 {
+    font-size: 40px;
+}.font-size-35 {
+    font-size: 35px;
+}
 .font-size-30 {
     font-size: 30px;
 }
@@ -362,7 +366,9 @@ body {
 .font-size-15 {
     font-size: 15px;
 }
-
+.font-size-14 {
+    font-size: 14px;
+}
 .font-size-13 {
     font-size: 13px;
 }
@@ -472,9 +478,9 @@ body {
     background-position: center;
     overflow: hidden;
 
-    margin-top: -50px;
+    margin-top: -35px;
     /* se mete 60px dentro del div anterior */
-    margin-bottom: -40px;
+    margin-bottom: -30px;
     /* se mete 60px dentro del div posterior */
 }
 
@@ -505,4 +511,8 @@ body {
     background-position: bottom;
     margin-bottom: -30px;
     /* se mete 60px dentro del div posterior */
+}
+.img-cover {
+    object-fit: cover; /* recorta sin deformar */
+    object-position: center; /* centra la imagen */
 }
