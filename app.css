@@ -143,9 +143,9 @@ body {
     position: relative;
     width: 100%;
     /* ocupa todo el ancho disponible */
-    height: 850px;
+    height: 700px;
     /* alto fijo (ajústalo a lo que necesites) */
-    background-image: url("Foto_Central.png");
+    background-image: url("Foto_Central_mini.png");
     background-size: cover;
     /* recorta la imagen si el ancho no alcanza */
     background-position: center;
@@ -170,13 +170,14 @@ body {
 
 
 .hero-text {
-    font-size: 35px;
+    font-size: 45px;
     margin: 0;
     font-weight: 500;
     text-align: left;
     color: white;
     font-family: 'Cinzel', serif;
     right: 0;
+    line-height: 45px;
 }
 
 .hero-text p {
