@@ -69,14 +69,19 @@ function iniciarCuentaRegresiva() {
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            countdown.classList.add("visible");
-            observer.unobserve(countdown);
+            entry.target.classList.add("visible"); // entry.target es el elemento observado
+            observer.unobserve(entry.target); // deja de observar ese elemento
         }
     });
 });
 
+// Selecciona todos los elementos con la clase "countdown"
+const elements = document.querySelectorAll(".aparicion-progresiva");
+
+// Observa cada uno
+elements.forEach(el => observer.observe(el));
+
 iniciarCuentaRegresiva();
-observer.observe(countdown);
 
 
 function toggleAudio(element) {
