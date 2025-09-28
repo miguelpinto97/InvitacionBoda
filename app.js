@@ -108,3 +108,46 @@ function AbrirMapaCieneguilla() {
     var ruta = 'https://maps.app.goo.gl/cKkS9LjXXi5mx44d8'
     window.open(ruta, "_blank");
 }
+
+document.querySelectorAll(".ph-copy").forEach((icon, index) => {
+    icon.addEventListener("click", () => {
+        // Tomar el texto del span anterior
+        const textToCopy = icon.previousElementSibling.innerText.trim();
+
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                showSuccessToast("Texto copiado");
+            })
+            .catch(err => {
+                showErrorToast("Error al copiar");
+            });
+    });
+});
+
+function showSuccessToast(mensaje) {
+    Toastify({
+        text: mensaje,
+        duration: 1500,
+        gravity: "bottom",
+        position: "center",
+        style: {
+            fontSize: "12px",        // más pequeño
+            padding: "4px 10px"      // menos alto/ancho
+        }
+    }).showToast();
+    
+}
+function showErrorToast(mensaje) {
+    Toastify({
+        text: mensaje,
+        className: "error",
+        duration: 1500,
+        gravity: "bottom",
+        position: "center",
+        style: {
+            fontSize: "12px",        // más pequeño
+            padding: "4px 10px"      // menos alto/ancho
+        }
+    }).showToast();
+    
+}
