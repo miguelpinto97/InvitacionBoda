@@ -15,9 +15,31 @@
 @font-face {
     font-family: 'Cinzel';
     src: url('fuentes/Cinzel/static/Cinzel-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('fuentes/Cinzel/static/Cinzel-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('fuentes/Cinzel/static/Cinzel-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('fuentes/Cinzel/static/Cinzel-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 @font-face {
     font-family: 'Parisienne';
@@ -131,41 +153,30 @@ body {
     overflow: hidden;
 }
 
-.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 250px;
-    /* gradiente solo en parte superior */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-}
+
 
 .hero .play {
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 20px;
+    color: white;
 }
 
 .hero .play:hover {
     cursor: pointer;
 }
 
-.hero-text {
-    position: absolute;
-    top: 20px;
-    /* separado un poco del borde */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #8E3B2E;
-    font-family: 'Cinzel', serif;
-}
 
-.hero-text h1 {
+
+.hero-text {
     font-size: 35px;
     margin: 0;
+    font-weight: 500;
+    text-align: left;
+    color: white;
+    font-family: 'Cinzel', serif;
+    right: 0;
 }
 
 .hero-text p {
@@ -279,19 +290,19 @@ body {
 
 .calendar .special {
     font-weight: bold;
-    color: #8E3B2E;
+    color: white;
+    font-size: 14px;
 }
 
 .calendar .special::before {
-    content: "❤️";
+    content: "♥"; /* este sí se pinta con color */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 30px;
-    opacity: 0.2;
-    /* difuminado para quedar detrás */
+    font-size: 70px;
     z-index: -1;
+    color: #8E3B2E; /* ahora sí se aplica */
 }
 
 
