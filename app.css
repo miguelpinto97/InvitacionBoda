@@ -143,7 +143,7 @@ body {
     position: relative;
     width: 100%;
     /* ocupa todo el ancho disponible */
-    height: 700px;
+    height: 750px;
     /* alto fijo (ajústalo a lo que necesites) */
     background-image: url("Foto_Central_mini.png");
     background-size: cover;
