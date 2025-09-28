@@ -294,13 +294,12 @@ body {
     font-size: 14px;
 }
 
-.calendar .special::before {
-    content: "♥"; /* este sí se pinta con color */
+.ph-heart {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 70px;
+    font-size: 40px;
     z-index: -1;
     color: #8E3B2E; /* ahora sí se aplica */
 }
