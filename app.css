@@ -593,3 +593,21 @@ body {
     object-position: center;
     /* centra la imagen */
 }
+
+.invitado {
+  background-color: rgba(125, 47, 35, 0.85); /* fondo con transparencia */
+  color: #fff;                    /* texto blanco, no se afecta */
+  margin: auto;
+  display: table;
+  font-size: 10px;
+  border-radius: 9999px;
+  padding: 0.25rem 0.7rem;
+  cursor: pointer;
+  text-align: center;
+  width: auto;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
