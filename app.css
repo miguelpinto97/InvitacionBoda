@@ -71,7 +71,7 @@ span {
 }
 
 .text-color-terracota-oscuro {
-    color: #8E3B2E;
+    color: #7d2f23;
     /* más profundo */
 }
 
@@ -89,7 +89,7 @@ span {
 }
 
 .bg-terracota-oscuro {
-    background-color: #8E3B2E;
+    background-color: #7d2f23;
 }
 
 /* Borde */
@@ -173,11 +173,12 @@ body {
     font-size: 45px;
     margin: 0;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     color: white;
     font-family: 'Cinzel', serif;
     right: 0;
     line-height: 45px;
+    padding-right: 2.75rem !important;
 }
 
 .hero-text p {
@@ -202,9 +203,9 @@ body {
 
 #countdown-container {
     padding: 0 0 5px;
-    /* border-top: 1.5px solid #8E3B2E; */
-    /* border-bottom: 1.5px solid #8E3B2E; */
-    color: #8E3B2E;
+    /* border-top: 1.5px solid #7d2f23; */
+    /* border-bottom: 1.5px solid #7d2f23; */
+    color: #7d2f23;
     position: relative;
     width: 100%;
     height: auto;
@@ -214,7 +215,7 @@ body {
     background-size: cover;
     overflow: hidden;
     display: flex;
-    ;
+    margin-top: 10px;
 }
 
 #countdown.visible {
@@ -263,7 +264,7 @@ body {
     font-family: 'Cinzel';
     font-size: 16px;
     text-align: center;
-    color: #8E3B2E;
+    color: #7d2f23;
     border-bottom: 1px solid;
     padding-bottom: 20px;
     display: block;
@@ -302,24 +303,37 @@ body {
     transform: translate(-50%, -50%);
     font-size: 40px;
     z-index: -1;
-    color: #8E3B2E; /* ahora sí se aplica */
+    color: #7d2f23;
+    /* ahora sí se aplica */
 }
 
 
 .fondo-hojita {
     width: auto;
     /* ocupa el ancho que necesites */
-    height: 450px;
+    height: 380px;
     /* alto fijo (ajústalo a lo que quieras) */
     background-size: contain;
     /* 🔑 asegura que se vea completa */
     background-repeat: no-repeat;
     /* evita repeticiones si sobra espacio */
-    background-position: center;
+    background-position: top;
     /* centrada */
     background-image: url("Hojita.png");
 }
-
+.fondo-flores {
+    width: auto;
+    /* ocupa el ancho que necesites */
+    height: 200px;
+    /* alto fijo (ajústalo a lo que quieras) */
+    background-size: contain;
+    /* 🔑 asegura que se vea completa */
+    background-repeat: no-repeat;
+    /* evita repeticiones si sobra espacio */
+    background-position: top;
+    /* centrada */
+    background-image: url("Hojita.png");
+}
 .fondo-uno {
     background-image: url("Hojita.png");
 }
@@ -349,11 +363,15 @@ body {
     background: rgb(255 211 154 / 14%)
         /* 0.5 = 50% transparencia */
 }
+
 .font-size-40 {
     font-size: 40px;
-}.font-size-35 {
+}
+
+.font-size-35 {
     font-size: 35px;
 }
+
 .font-size-30 {
     font-size: 30px;
 }
@@ -377,9 +395,11 @@ body {
 .font-size-15 {
     font-size: 15px;
 }
+
 .font-size-14 {
     font-size: 14px;
 }
+
 .font-size-13 {
     font-size: 13px;
 }
@@ -489,10 +509,8 @@ body {
     background-position: center;
     overflow: hidden;
 
-    margin-top: -35px;
-    /* se mete 60px dentro del div anterior */
-    margin-bottom: -30px;
-    /* se mete 60px dentro del div posterior */
+    margin-top: -25px;
+    margin-bottom: -20px;
 }
 
 .RasgadoSuperior {
@@ -523,7 +541,10 @@ body {
     margin-bottom: -30px;
     /* se mete 60px dentro del div posterior */
 }
+
 .img-cover {
-    object-fit: cover; /* recorta sin deformar */
-    object-position: center; /* centra la imagen */
+    object-fit: cover;
+    /* recorta sin deformar */
+    object-position: center;
+    /* centra la imagen */
 }
