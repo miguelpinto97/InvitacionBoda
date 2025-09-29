@@ -553,15 +553,15 @@ body {
 .ImagenRasgada {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 192 / 125;
 
     background-image: url("Fondo_Rasgado.png");
     background-size: cover;
     background-position: center;
     overflow: hidden;
 
-    margin-top: -25px;
-    margin-bottom: -20px;
+    margin-top: -15px;
+    margin-bottom: -15px;
     z-index: 99999;
 }
 
