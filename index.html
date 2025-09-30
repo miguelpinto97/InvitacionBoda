@@ -469,7 +469,7 @@
                     <div
                         style="border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);">
                         <span class="font-size-12" style="font-weight: 500;">Indicaciones:</span>
-                        <ul class="font-size-11">
+                        <ul class="font-size-11 mb-0">
                             <li>
                                 <span>Marca aquellos momentos en los que podrás acompañarnos</span>
                             </li>
@@ -477,28 +477,36 @@
                                 <span>Dale click a "Guardar" al finalizar</span>
                             </li>
                             <li>
-                                <span>Deberás hacerlo por cada integrante de tu grupo o seleccionando "Todos"</span>
-                            </li>
-                            <li>
                                 <span>
                                     Podrás editarlo hasta el sábado 04 de octubre
                                 </span>
                             </li>
+                        </ul>
+                         <span class="font-size-12" style="font-weight: 500;">Invitaciones grupales:</span>
+                        <ul class="font-size-11">
+                            <li>
+                                <span>Deberás hacerlo por cada integrante de tu grupo o seleccionando "Todos"</span>
+                            </li>
                             <li>
                                 <span>
-                                    El Vehículo se registra solo una vez por grupo
+                                    El Vehículo se considera para todo el grupo
                                 </span>
                             </li>
-                        </ul>
+                        </ul>                       
                     </div>
 
                     <div class="font-size-15">
 
-                        <select id="cboIntegrantes" class="form-select form-select-sm mt-3 mb-3" style="width: 50%; margin: auto;">
-                            <option value="100">Todos</option>
-                        </select>
+                        <div id="dIntegrantes">
+                            <span id="txtIntegrante"
+                                class="font-size-11 d-block text-center mt-3 mb-1">Integrante</span>
+                            <select id="cboIntegrantes" class="form-select form-select-sm"
+                                style="width: 40%; margin: auto;">
+                            </select>
+                        </div>
 
-                        <div class="mb-2 form-check">
+
+                        <div class="mb-2 form-check mt-3">
                             <input type="checkbox" class="form-check-input chk-custom" id="chkCivil">
                             <span>10:15 am - Civil</span>
                         </div>
@@ -511,15 +519,21 @@
                             <input type="checkbox" class="form-check-input chk-custom" id="chkRecepcion">
                             <span>5:00 pm - Recepción</span>
                         </div>
+                        
+                        <div class="mb-2 form-check" id="dAplicarTodos"
+                            style="border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);padding-bottom: 7px;">
+                            <input type="checkbox" class="form-check-input chk-custom" id="chkTodos">
+                            <span>Aplicar asistencia para todos</span>
+                        </div>
                         <div class="mb-2 form-check">
                             <input type="checkbox" class="form-check-input chk-custom" id="chkVehiculo">
-                            <span>Llevamos vehículo</span>
+                            <span>Cuento con Vehículo propio a Cieneguilla</span>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-confirmar btn-custom-md">Guardar</button>
+                    <button type="button" class="btn-confirmar btn-custom-md" Id="btnGuardarAsistencia">Guardar</button>
                 </div>
             </div>
         </div>
