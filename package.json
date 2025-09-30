@@ -1,0 +1,14 @@
+{
+  "name": "invitaciion-boda",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "firebase": "^10.13.1"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.36.1"
+  }
+}
