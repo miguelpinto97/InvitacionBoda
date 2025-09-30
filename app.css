@@ -492,7 +492,11 @@ body {
   transform: translateY(1px);     /* efecto de presión */
   box-shadow: 0 2px 3px rgba(0,0,0,0.2);
 }
-
+.btn-custom-md{
+      font-size: 14px !important; 
+      font-weight: normal;    
+      padding: 0.3rem 0.7rem;        
+}
 .timeline {
     position: relative;
     max-width: 900px;
