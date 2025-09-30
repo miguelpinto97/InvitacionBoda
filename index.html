@@ -54,6 +54,7 @@
                         <span style="display:block;text-align:center;font-size:20px;" Id="txtInvitado">
                             <img src="loading.gif" style="width: 50px;" loading="lazy">
                         </span>
+                        <span style="display:block;text-align:center;font-size:13px;" Id="txtDetalle"></span>
                     </div>
                 </div>
 
@@ -465,24 +466,38 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <span class="font-size-12" style="font-weight: 500;">Indicaciones:</span>
-                    <ul class="font-size-11">
-                        <li>
-                            <span>Marca aquellos momentos en los que podrás acompañarnos.</span>
-                        </li>
-                        <li>
-                            <span>Dale click a "Guardar" al finalizar.</span>
-                        </li>
-                        <li>
-                            <span>Deberás hacerlo por cada integrante de tu grupo.</span>
-                        </li>
-                        <li>
-                            <span>
-                                Podrás editarlo hasta el sábado 04 de octubre.
-                            </span>
-                        </li>
-                    </ul>
+                    <div
+                        style="border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);">
+                        <span class="font-size-12" style="font-weight: 500;">Indicaciones:</span>
+                        <ul class="font-size-11">
+                            <li>
+                                <span>Marca aquellos momentos en los que podrás acompañarnos</span>
+                            </li>
+                            <li>
+                                <span>Dale click a "Guardar" al finalizar</span>
+                            </li>
+                            <li>
+                                <span>Deberás hacerlo por cada integrante de tu grupo o seleccionando "Todos"</span>
+                            </li>
+                            <li>
+                                <span>
+                                    Podrás editarlo hasta el sábado 04 de octubre
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    El Vehículo se registra solo una vez por grupo
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div class="font-size-15">
+
+                        <select id="cboIntegrantes" class="form-select form-select-sm mt-3 mb-3" style="width: 50%; margin: auto;">
+                            <option value="100">Todos</option>
+                        </select>
+
                         <div class="mb-2 form-check">
                             <input type="checkbox" class="form-check-input chk-custom" id="chkCivil">
                             <span>10:15 am - Civil</span>
@@ -491,13 +506,14 @@
                             <input type="checkbox" class="form-check-input chk-custom" id="chkSellamiento">
                             <span>2:30 pm - Sellamiento</span>
                         </div>
-                        <div class="mb-2 form-check">
+                        <div class="mb-2 form-check"
+                            style="border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);padding-bottom: 7px;">
                             <input type="checkbox" class="form-check-input chk-custom" id="chkRecepcion">
                             <span>5:00 pm - Recepción</span>
                         </div>
                         <div class="mb-2 form-check">
                             <input type="checkbox" class="form-check-input chk-custom" id="chkVehiculo">
-                            <span>Llevo vehículo</span>
+                            <span>Llevamos vehículo</span>
                         </div>
                     </div>
 

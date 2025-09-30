@@ -36,7 +36,8 @@ export async function handler(event) {
                 statusCode: 200,
                 body: JSON.stringify({
                     Nombre: data.Nombre,
-                    Cantidad: data.Cantidad
+                    Cantidad: data.Cantidad,
+                    Detalle: data.Detalle
                 })
             };
         } else {
