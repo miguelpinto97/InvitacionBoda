@@ -64,7 +64,7 @@
                     <div class="overlay"></div>
                     <i class="play ph-fill ph-pause" onclick="toggleAudio(this)"></i>
                     <div class="d-flex mt-5" style="justify-content: flex-end;">
-                        <h1 class="hero-text ml-auto">Camila &<br> Miguel</h1>
+                        <h1 class="hero-text mt-2 m-auto Parisienne">Camila & Miguel</h1>
                     </div>
 
                 </div>
@@ -397,7 +397,7 @@
                     </div>
 
                 </div>
-                <div id="InfoRegalos" class="p-1 d-flex pb-5 aparicion-progresiva">
+                <div id="InfoRegalos" class="p-1 d-flex pb-4 aparicion-progresiva">
                     <div class="col-12 m-auto d-flex flex-wrap mb-2">
                         <div class="col-12">
                             <span
@@ -457,7 +457,8 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="modal-title fs-5 font-size-20" id="staticBackdropLabel">Confirmar Asistencia</span>
+                    <span class="modal-title fs-5 font-size-20 text-color-terracota-oscuro"
+                        id="staticBackdropLabel">Confirmar Asistencia</span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -470,6 +471,9 @@
                             <span>Dale click a "Guardar" al finalizar.</span>
                         </li>
                         <li>
+                            <span>Deberás hacerlo por cada integrante de tu grupo.</span>
+                        </li>
+                        <li>
                             <span>
                                 Podrás editarlo hasta el sábado 04 de octubre.
                             </span>
@@ -477,22 +481,25 @@
                     </ul>
                     <div class="font-size-15">
                         <div class="mb-2 form-check">
-                            <input type="checkbox" class="form-check-input" id="chkCivil">
+                            <input type="checkbox" class="form-check-input chk-custom" id="chkCivil">
                             <span>10:15 am - Civil</span>
                         </div>
                         <div class="mb-2 form-check">
-                            <input type="checkbox" class="form-check-input" id="chkSellamiento">
+                            <input type="checkbox" class="form-check-input chk-custom" id="chkSellamiento">
                             <span>2:30 pm - Sellamiento</span>
                         </div>
                         <div class="mb-2 form-check">
-                            <input type="checkbox" class="form-check-input" id="chkRecepcion">
+                            <input type="checkbox" class="form-check-input chk-custom" id="chkRecepcion">
                             <span>5:00 pm - Recepción</span>
+                        </div>
+                        <div class="mb-2 form-check">
+                            <input type="checkbox" class="form-check-input chk-custom" id="chkVehiculo">
+                            <span>Llevo vehículo</span>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn-confirmar btn-custom-md">Guardar</button>
                 </div>
             </div>
