@@ -143,13 +143,10 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    /* ocupa todo el ancho disponible */
-    aspect-ratio: 8 / 13;    /* alto fijo (ajústalo a lo que necesites) */
-    background-image: url("Foto_Central_mini.png");
+    aspect-ratio: 25 / 46;
+    background-image: url(Foto_Central_mini.png);
     background-size: cover;
-    /* recorta la imagen si el ancho no alcanza */
     background-position: center;
-    /* centrada */
     overflow: hidden;
 }
 
