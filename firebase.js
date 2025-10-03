@@ -30,6 +30,10 @@ async function cargarInvitado(reconstruirCombo) {
         const divSellamiento = document.getElementById("divSellamiento");
         const divFotosTemplo = document.getElementById("divFotosTemplo");
         const divCheckSellamiento = document.getElementById("divCheckSellamiento");
+        
+        
+        const divTransporte = document.getElementById("divTransporte");
+        const divCheckTransporte = document.getElementById("divCheckTransporte");
 
         if (res.ok) {
             dataInvitado = data;
@@ -54,6 +58,17 @@ async function cargarInvitado(reconstruirCombo) {
                 divSellamiento.classList.remove("aparicion-progresiva");
             }
 
+            console.log(data.OcultarTransporte)
+            if (data.OcultarTransporte === true || data.OcultarTransporte === "true" || data.OcultarTransporte === 1) {
+                 divTransporte.style.display = 'none';
+                divCheckTransporte.style.display = 'none';
+                divTransporte.classList.remove("aparicion-progresiva");
+
+            } else {
+                
+                divTransporte.style.display = 'block';
+                divCheckTransporte.style.display = 'block';
+            }
 
             if (data.Detalle && data.Detalle.length > 0) {
 
