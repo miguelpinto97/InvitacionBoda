@@ -39,7 +39,8 @@ export async function handler(event) {
                         Nombre: data.Nombre,
                         Cantidad: data.Cantidad,
                         Vehiculo: data.Vehiculo || false,
-                        Detalle: data.Detalle || []
+                        Detalle: data.Detalle || [],
+                        MostrarSellamiento
                     })
                 };
             } else {
