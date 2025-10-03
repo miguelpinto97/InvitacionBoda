@@ -39,15 +39,20 @@ async function cargarInvitado(reconstruirCombo) {
             // ✅ Vehículo es a nivel de invitado general
             chkVehiculo.checked = data.Vehiculo === true;
 
-            if(data.MostrarSellamiento){
+
+            console.log(data.MostrarSellamiento);
+
+            if (data.MostrarSellamiento === true || data.MostrarSellamiento === "true" || data.MostrarSellamiento === 1) {
                 divSellamiento.style.display = 'block';
                 divCheckSellamiento.style.display = 'block';
                 divFotosTemplo.style.display = 'none';
-            }else{
+            } else {
                 divSellamiento.style.display = 'none';
                 divCheckSellamiento.style.display = 'none';
                 divFotosTemplo.style.display = 'block';
             }
+
+
             if (data.Detalle && data.Detalle.length > 0) {
 
                 if (data.Detalle.length == 1 && data.Detalle[0].Integrante == "UNICO") {
