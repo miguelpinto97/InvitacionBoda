@@ -29,7 +29,7 @@ async function cargarInvitado(reconstruirCombo) {
         if (res.ok) {
             dataInvitado = data;
             txtInvitado.textContent = data.Nombre;
-            txtCantidad.textContent = `Invitación para (${data.Cantidad})`;
+            txtCantidad.textContent = `Invitación para (${data.Detalle.length})`;
 
             // ✅ Vehículo es a nivel de invitado general
             chkVehiculo.checked = data.Vehiculo === true;
