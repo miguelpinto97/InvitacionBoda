@@ -46,10 +46,12 @@ async function cargarInvitado(reconstruirCombo) {
                 divSellamiento.style.display = 'block';
                 divCheckSellamiento.style.display = 'block';
                 divFotosTemplo.style.display = 'none';
+                divFotosTemplo.classList.remove("aparicion-progresiva");
             } else {
                 divSellamiento.style.display = 'none';
                 divCheckSellamiento.style.display = 'none';
                 divFotosTemplo.style.display = 'block';
+                divSellamiento.classList.remove("aparicion-progresiva");
             }
 
 
