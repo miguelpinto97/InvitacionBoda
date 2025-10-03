@@ -4,7 +4,7 @@ const Id = params.get("Id"); // ejemplo: ?Id=abc123
 
 var dataInvitado;
 
-async function cargarInvitado() {
+async function cargarInvitado(reconstruirCombo) {
     if (!Id) {
         console.log("⚠️ No se encontró 'Id' en la URL");
         return;
@@ -24,6 +24,7 @@ async function cargarInvitado() {
         const chkSellamiento = document.getElementById("chkSellamiento");
         const chkRecepcion = document.getElementById("chkRecepcion");
         const chkVehiculo = document.getElementById("chkVehiculo");
+        const chkBusGrupal = document.getElementById("chkBusGrupal");
 
         if (res.ok) {
             dataInvitado = data;
@@ -46,6 +47,7 @@ async function cargarInvitado() {
                         chkCivil.checked = integrante.Civil === true;
                         chkSellamiento.checked = integrante.Sellamiento === true;
                         chkRecepcion.checked = integrante.Recepcion === true;
+                        chkBusGrupal.checked = integrante.BusGrupal === true;
                     }
                     console.log("UNICO");
                     return;
@@ -64,13 +66,16 @@ async function cargarInvitado() {
                 txtDetalle.textContent = texto;
 
                 // Poblar combo
-                cboIntegrantes.innerHTML = '';
-                data.Detalle.forEach(d => {
-                    const opt = document.createElement("option");
-                    opt.value = d.Integrante;
-                    opt.textContent = d.Integrante;
-                    cboIntegrantes.appendChild(opt);
-                });
+                if(reconstruirCombo){
+                    cboIntegrantes.innerHTML = '';
+                    data.Detalle.forEach(d => {
+                        const opt = document.createElement("option");
+                        opt.value = d.Integrante;
+                        opt.textContent = d.Integrante;
+                        cboIntegrantes.appendChild(opt);
+                    });
+                }
+
 
                 // ✅ Evento onchange para llenar checks
                 cboIntegrantes.onchange = () => {
@@ -79,6 +84,7 @@ async function cargarInvitado() {
                         chkCivil.checked = false;
                         chkSellamiento.checked = false;
                         chkRecepcion.checked = false;
+                        chkBusGrupal.checked = false;
                         return;
                     }
 
@@ -88,6 +94,7 @@ async function cargarInvitado() {
                         chkCivil.checked = integrante.Civil === true;
                         chkSellamiento.checked = integrante.Sellamiento === true;
                         chkRecepcion.checked = integrante.Recepcion === true;
+                        chkBusGrupal.checked = integrante.BusGrupal === true;
                     }
                 };
 
@@ -105,7 +112,7 @@ async function cargarInvitado() {
 }
 
 
-cargarInvitado();
+cargarInvitado(true);
 
 
 
@@ -141,6 +148,7 @@ document.getElementById("btnGuardarAsistencia").addEventListener("click", async 
     const civil = document.getElementById("chkCivil").checked;
     const sellamiento = document.getElementById("chkSellamiento").checked;
     const recepcion = document.getElementById("chkRecepcion").checked;
+    const busGrupal = document.getElementById("chkBusGrupal").checked;
 
     // payload base
     const payload = {
@@ -148,6 +156,7 @@ document.getElementById("btnGuardarAsistencia").addEventListener("click", async 
         Civil: civil,
         Sellamiento: sellamiento,
         Recepcion: recepcion,
+        BusGrupal: busGrupal,
         Vehiculo: chkVehiculo
     };
 
@@ -178,6 +187,7 @@ document.getElementById("btnGuardarAsistencia").addEventListener("click", async 
             showSuccessToast("Asistencia guardada");
             // actualizar cache local
             dataInvitado.Vehiculo = chkVehiculo;
+            cargarInvitado(false);
         } else {
             alert("❌ Error: " + out.error);
         }

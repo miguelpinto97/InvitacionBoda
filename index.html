@@ -310,10 +310,24 @@
                     <div class="border-terracota-oscuro border-radius-4 pt-3 pb-3 mb-3 aparicion-progresiva"
                         style="background-color: rgb(255 255 255);">
                         <span class="mt-2 mb-2 text-center d-block font-size-20 text-color-terracota-oscuro">
+                            Transporte
+                        </span>
+                        <img src="Bus.png" style="width: 70px" class="mb-2 mx-auto d-block" loading="lazy">
+                        <span class="font-size-14 d-block text-center mb-3">Tenemos una opción de transporte<br>que
+                            podría interesarte</span>
+                        <div class="btn-confirmar" style="margin-bottom: .6rem !important;">
+                            <span data-bs-toggle="modal" data-bs-target="#modalInfoTransporte">
+                                Ver Aquí
+                            </span>
+                        </div>
+                    </div>
+                    <div class="border-terracota-oscuro border-radius-4 pt-3 pb-3 mb-3 aparicion-progresiva"
+                        style="background-color: rgb(255 255 255);">
+                        <span class="mt-2 mb-2 text-center d-block font-size-20 text-color-terracota-oscuro">
                             Confirma tu Asistencia
                         </span>
                         <span class="mt-2 mb-3 text-center d-block font-size-14">
-                            Antes del sábado 04 de octubre
+                            Antes del sábado 11 de octubre
                         </span>
                         <div class="btn-confirmar" style="margin-bottom: .6rem !important;">
                             <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -478,21 +492,21 @@
                             </li>
                             <li>
                                 <span>
-                                    Podrás editarlo hasta el sábado 04 de octubre
+                                    Podrás editarlo hasta el sábado 11 de octubre
                                 </span>
                             </li>
                         </ul>
-                         <span class="font-size-12" style="font-weight: 500;">Invitaciones grupales:</span>
+                        <span class="font-size-12" style="font-weight: 500;">Invitaciones grupales:</span>
                         <ul class="font-size-11">
                             <li>
-                                <span>Deberás hacerlo por cada integrante de tu grupo o seleccionando "Todos"</span>
+                                <span>Deberás hacerlo por cada integrante de tu grupo</span>
                             </li>
                             <li>
                                 <span>
-                                    El Vehículo se considera para todo el grupo
+                                    Se considera 1 vehículo por grupo
                                 </span>
                             </li>
-                        </ul>                       
+                        </ul>
                     </div>
 
                     <div class="font-size-15">
@@ -519,11 +533,15 @@
                             <input type="checkbox" class="form-check-input chk-custom" id="chkRecepcion">
                             <span>5:00 pm - Recepción</span>
                         </div>
-                        
-                        <div class="mb-2 form-check" id="dAplicarTodos"
+                        <div class="mb-2 form-check"
+                            style="border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);padding-bottom: 7px;">
+                            <input type="checkbox" class="form-check-input chk-custom" id="chkBusGrupal">
+                            <span>Incluir en el Bus Grupal</span>
+                        </div>
+                        <div class="mb-2 form-check d-none" id="dAplicarTodos"
                             style="border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);padding-bottom: 7px;">
                             <input type="checkbox" class="form-check-input chk-custom" id="chkTodos">
-                            <span>Aplicar asistencia para todos</span>
+                            <span>Aplicar para todos</span>
                         </div>
                         <div class="mb-2 form-check">
                             <input type="checkbox" class="form-check-input chk-custom" id="chkVehiculo">
@@ -539,7 +557,87 @@
         </div>
     </div>
 
+    <div class="modal fade" id="modalInfoTransporte" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title fs-5 font-size-20 text-color-terracota-oscuro"
+                        id="staticBackdropLabel">Transporte</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <span class="font-size-13" style="font-weight: 500;">Vehículo Propio:</span>
+                        <ul class="font-size-12 mb-2">
+                            <li>
+                                <span>Contamos con espacios vigilados al exterior del local</span>
+                            </li>
+                            <li>
+                                <span>Al momento de confirmar tu asistencia, marca la casilla correspondiente.</span>
+                            </li>
+                        </ul>
+                        <span class="font-size-13" style="font-weight: 500;">Transporte Público</span><br>
+                        <ul class="font-size-12 mb-2">
+                            <li>
+                                <span>Jockey Plaza: Colectivos - Costo Aprox: S/ 7</span>
+                            </li>
+                            <li>
+                                <span>
+                                    Av. La Molina con Av. Javier Prado: Micros - Costo Aprox: S/ 4
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    En ambos casos hacen paradas en la misma ubicación del local
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    Considerar que al retorno podría no haber mucha opción de transporte.
+                                </span>
+                            </li>
+                        </ul>
+                        <span class="font-size-13" style="font-weight: 500;">Bus Grupal</span>
+                        <ul class="font-size-12">
+                            <li>
+                                <span>Pondremos a disposición un transporte privado que los llevará desde el Templo de
+                                    La
+                                    Molina hasta Cieneguilla (ida y vuelta al finalizar la recepción).</span>
+                            </li>
+                            <li>
+                                <span>Costo por persona: S/ 20</span>
+                            </li>
+                            <li>
+                                <span>Al confirmar tu asistencia, por favor indica si deseas usar la
+                                    movilidad</span>
+                            </li>
+                            <li>
+                                <span>Forma de pago: Realiza el pago por yape al <span class="copy-text">904 166 831</span> <i class="ph ph-copy"></i> y manda la captura por whatsapp <a href="https://wa.me/904166831" target="_blank" >aquí</a>
 
+                                    máximo hasta el sábado 11 de octubre.</span>
+                            </li>
+                            <li>
+                                <span>Punto de partida: 4:00 p.m.<br>Templo La Molina - Av. Javier Prado Este
+                                    6420</span>
+                            </li>
+                            <li>
+                                <span>Retorno: 10:45 p.m.</span>
+                            </li>
+                            <li>
+                                <span>De esta manera aseguramos tu asiento y que viajes sin preocupaciones.</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-confirmar btn-custom-md" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

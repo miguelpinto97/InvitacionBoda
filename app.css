@@ -625,3 +625,6 @@ body {
      background-color: #7d2f23 !important; 
       border-color: #7d2f23 !important; 
 }
+.ph:hover{
+    cursor: pointer;
+}

@@ -53,7 +53,7 @@ export async function handler(event) {
         // 🔹 POST -> guardar asistencia
         if (event.httpMethod === "POST") {
             const body = JSON.parse(event.body || "{}");
-            const { Id, Integrante, Civil, Sellamiento, Recepcion, Vehiculo, Todos } = body;
+            const { Id, Integrante, Civil, Sellamiento, Recepcion, Vehiculo, Todos, BusGrupal } = body;
 
             if (!Id) {
                 return {
@@ -81,7 +81,8 @@ export async function handler(event) {
                     ...item,
                     Civil: Civil ?? item.Civil,
                     Sellamiento: Sellamiento ?? item.Sellamiento,
-                    Recepcion: Recepcion ?? item.Recepcion
+                    Recepcion: Recepcion ?? item.Recepcion,
+                    BusGrupal: BusGrupal ?? item.BusGrupal
                 }));
             } else if (Integrante) {
                 detalle = detalle.map(item =>
@@ -90,7 +91,8 @@ export async function handler(event) {
                             ...item,
                             Civil: Civil ?? item.Civil,
                             Sellamiento: Sellamiento ?? item.Sellamiento,
-                            Recepcion: Recepcion ?? item.Recepcion
+                            Recepcion: Recepcion ?? item.Recepcion,
+                            BusGrupal: BusGrupal ?? item.BusGrupal
                         }
                         : item
                 );
