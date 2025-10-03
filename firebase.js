@@ -26,6 +26,11 @@ async function cargarInvitado(reconstruirCombo) {
         const chkVehiculo = document.getElementById("chkVehiculo");
         const chkBusGrupal = document.getElementById("chkBusGrupal");
 
+
+        const divSellamiento = document.getElementById("divSellamiento");
+        const divFotosTemplo = document.getElementById("divFotosTemplo");
+        const divCheckSellamiento = document.getElementById("divCheckSellamiento");
+
         if (res.ok) {
             dataInvitado = data;
             txtInvitado.textContent = data.Nombre;
@@ -34,6 +39,15 @@ async function cargarInvitado(reconstruirCombo) {
             // ✅ Vehículo es a nivel de invitado general
             chkVehiculo.checked = data.Vehiculo === true;
 
+            if(data.MostrarSellamiento){
+                divSellamiento.style.display = 'block';
+                divCheckSellamiento.style.display = 'block';
+                divFotosTemplo.style.display = 'none';
+            }else{
+                divSellamiento.style.display = 'none';
+                divCheckSellamiento.style.display = 'none';
+                divFotosTemplo.style.display = 'block';
+            }
             if (data.Detalle && data.Detalle.length > 0) {
 
                 if (data.Detalle.length == 1 && data.Detalle[0].Integrante == "UNICO") {
@@ -66,7 +80,7 @@ async function cargarInvitado(reconstruirCombo) {
                 txtDetalle.textContent = texto;
 
                 // Poblar combo
-                if(reconstruirCombo){
+                if (reconstruirCombo) {
                     cboIntegrantes.innerHTML = '';
                     data.Detalle.forEach(d => {
                         const opt = document.createElement("option");
