@@ -40,7 +40,7 @@ export async function handler(event) {
                         Cantidad: data.Cantidad,
                         Vehiculo: data.Vehiculo || false,
                         Detalle: data.Detalle || [],
-                        MostrarSellamiento
+                        MostrarSellamiento: data.MostrarSellamiento || false,
                     })
                 };
             } else {
