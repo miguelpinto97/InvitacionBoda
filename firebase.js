@@ -30,8 +30,8 @@ async function cargarInvitado(reconstruirCombo) {
         const divSellamiento = document.getElementById("divSellamiento");
         const divFotosTemplo = document.getElementById("divFotosTemplo");
         const divCheckSellamiento = document.getElementById("divCheckSellamiento");
-        
-        
+
+
         const divTransporte = document.getElementById("divTransporte");
         const divCheckTransporte = document.getElementById("divCheckTransporte");
 
@@ -42,6 +42,14 @@ async function cargarInvitado(reconstruirCombo) {
 
             // ✅ Vehículo es a nivel de invitado general
             chkVehiculo.checked = data.Vehiculo === true;
+
+            const lblFechaLimite = document.getElementById("lblFechaLimite");
+
+            if (dataInvitado.FechaLimite) {
+                lblFechaLimite.textContent = `Antes del ${data.FechaLimite}`;
+            } else {
+                lblFechaLimite.textContent = "Antes del 11 de Octubre";
+            }
 
 
             console.log(data.MostrarSellamiento);
@@ -60,12 +68,12 @@ async function cargarInvitado(reconstruirCombo) {
 
             console.log(data.OcultarTransporte)
             if (data.OcultarTransporte === true || data.OcultarTransporte === "true" || data.OcultarTransporte === 1) {
-                 divTransporte.style.display = 'none';
+                divTransporte.style.display = 'none';
                 divCheckTransporte.style.display = 'none';
                 divTransporte.classList.remove("aparicion-progresiva");
 
             } else {
-                
+
                 divTransporte.style.display = 'block';
                 divCheckTransporte.style.display = 'block';
             }
