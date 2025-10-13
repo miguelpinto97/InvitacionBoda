@@ -41,7 +41,8 @@ export async function handler(event) {
                         Vehiculo: data.Vehiculo || false,
                         Detalle: data.Detalle || [],
                         MostrarSellamiento: data.MostrarSellamiento || false,
-                        OcultarTransporte: data.OcultarTransporte || false
+                        OcultarTransporte: data.OcultarTransporte || false,
+                        FechaLimite: data.FechaLimite
                     })
                 };
             } else {
