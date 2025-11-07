@@ -30,10 +30,12 @@ async function cargarInvitado(reconstruirCombo) {
         const divSellamiento = document.getElementById("divSellamiento");
         const divFotosTemplo = document.getElementById("divFotosTemplo");
         const divCheckSellamiento = document.getElementById("divCheckSellamiento");
+        const divRecepcion = document.getElementById("divRecepcion");
 
 
         const divTransporte = document.getElementById("divTransporte");
         const divCheckTransporte = document.getElementById("divCheckTransporte");
+        const divCheckRecepcion = document.getElementById("divCheckRecepcion");
 
         if (res.ok) {
             dataInvitado = data;
@@ -50,7 +52,7 @@ async function cargarInvitado(reconstruirCombo) {
             } else {
                 lblFechaLimite.textContent = "Antes del 11 de Octubre";
             }
-
+            console.log(dataInvitado);
 
             console.log(data.MostrarSellamiento);
 
@@ -77,6 +79,21 @@ async function cargarInvitado(reconstruirCombo) {
                 divTransporte.style.display = 'block';
                 divCheckTransporte.style.display = 'block';
             }
+
+            console.log(data.OcultarRecepcion)
+            if (data.OcultarRecepcion === true || data.OcultarRecepcion === "true" || data.OcultarRecepcion === 1) {
+                divRecepcion.style.display = 'none';
+                divCheckRecepcion.style.display = 'none';
+                divCheckRecepcion2.style.display = 'none';
+                divRecepcion.classList.remove("aparicion-progresiva");
+                divRecepcion.classList.remove("d-flex");
+
+            } else {
+
+                divRecepcion.style.display = 'flex';
+                divCheckRecepcion.style.display = 'block';
+                divCheckRecepcion2.style.display = 'block';
+         }
 
             if (data.Detalle && data.Detalle.length > 0) {
 
