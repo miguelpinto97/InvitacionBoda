@@ -42,6 +42,7 @@ export async function handler(event) {
                         Detalle: data.Detalle || [],
                         MostrarSellamiento: data.MostrarSellamiento || false,
                         OcultarTransporte: data.OcultarTransporte || false,
+                        OcultarRecepcion: data.OcultarRecepcion || false,
                         FechaLimite: data.FechaLimite
                     })
                 };
