@@ -93,7 +93,14 @@ async function cargarInvitado(reconstruirCombo) {
                 divRecepcion.style.display = 'flex';
                 divCheckRecepcion.style.display = 'block';
                 divCheckRecepcion2.style.display = 'block';
-         }
+            }
+
+            const bloqueado = data.BloquearEdicion === true;   // true solo si realmente es true
+            console.log("Bloquear Edicion: " + bloqueado)
+            if (bloqueado) {
+                const btn = document.getElementById("btnGuardarAsistencia");
+                if (btn) btn.remove();
+            }
 
             if (data.Detalle && data.Detalle.length > 0) {
 
@@ -164,9 +171,16 @@ async function cargarInvitado(reconstruirCombo) {
             } else {
                 txtDetalle.textContent = "";
             }
+
+
+
+
         } else {
             txtInvitado.textContent = "- No encontrado -";
         }
+
+
+
     } catch (err) {
         console.error("Error cargando invitado", err);
     }

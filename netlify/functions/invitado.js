@@ -43,7 +43,8 @@ export async function handler(event) {
                         MostrarSellamiento: data.MostrarSellamiento || false,
                         OcultarTransporte: data.OcultarTransporte || false,
                         OcultarRecepcion: data.OcultarRecepcion || false,
-                        FechaLimite: data.FechaLimite
+                        FechaLimite: data.FechaLimite,
+                        BloquearEdicion: data.BloquearEdicion  || false
                     })
                 };
             } else {
